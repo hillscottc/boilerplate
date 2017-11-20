@@ -1,21 +1,32 @@
 import React from 'react'
-import Hello from 'components/Hello'
-import { renderRoutes } from 'react-router-config'
-import { HashRouter as Router } from 'react-router-dom'
-import routes from 'routes'
-import logo from './assets/logo.svg'
+import PropTypes from 'prop-types'
+import { HashRouter as Router, Route } from 'react-router-dom'
+import Header from './components/header'
 import './App.css'
 
-const App = () => (
-  <div className='App'>
-    <div className='App-header'>
-      <img src={logo} className='App-logo shake-rotate' alt='logo' />
+// const App = () => (
+//   <div className='App'>
+//     <div className='App-header'>
+//       <img src={logo} className='App-logo shake-rotate' alt='logo' />
+//     </div>
+//     <Hello msg='Hello World' />
+//     <Router>
+//       {renderRoutes(routes)}
+//     </Router>
+//   </div>
+// )
+
+const App = ({user}) => (
+  <Router>
+    <div>
+      <Header />
+      <Route path='/' />
     </div>
-    <Hello msg='Hello World' />
-    <Router>
-      {renderRoutes(routes)}
-    </Router>
-  </div>
+  </Router>
 )
+
+App.propTypes = {
+  user: PropTypes.object
+}
 
 export default App

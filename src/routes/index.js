@@ -1,6 +1,7 @@
 import Loadable from 'react-loadable'
 import MainView from 'views/MainView'
 import SyncView from 'views/SyncView'
+import ComicSearch from '../containers/comic-search'
 
 const AsyncView = Loadable({
   loader: () => import('views/AsyncView'),
@@ -21,7 +22,11 @@ export default [
       {
         path: '/async',
         component: AsyncView
-      }
+      },
+      {
+        path: '/comic',
+        component: ComicSearch
+      },
     ]
   }
 ]
