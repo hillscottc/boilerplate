@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import { HashRouter as Router, Route } from 'react-router-dom'
 import Header from './components/header'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap-theme.css'
+import ComicSearch from './containers/comic-search'
 
 // const App = () => (
 //   <div className='App'>
@@ -21,6 +24,7 @@ const App = ({user}) => (
     <div>
       <Header />
       <Route path='/' />
+      <Route path='/comic' component={props => <ComicSearch user={user} />} />
     </div>
   </Router>
 )
