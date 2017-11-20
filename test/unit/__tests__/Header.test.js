@@ -4,7 +4,6 @@ import Adapter from 'enzyme-adapter-react-16'
 import Header from 'src/components/header'
 import * as dpwLogo from 'src/assets/dpw_logo_header.gif'
 
-
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('<Header />', () => {
