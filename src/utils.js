@@ -27,7 +27,7 @@ export function checkHttpResp (response) {
 
 // As seen in inc_Security.asp
 export function getEnviron (url) {
-  console.log('Get environ for ' + url)
+  console.log('HARDCODED Development environ for ' + url)
 
   return 'Development'
 

@@ -1,5 +1,7 @@
 # boilerplate
 
+https://github.com/SidKwok/react-webpack-boilerplate
+
 > A React project
 
 ## Usage
