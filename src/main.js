@@ -4,6 +4,11 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import { AppContainer } from 'react-hot-loader'
 
+import { Modal } from 'react-overlays'
+Modal.prototype.componentWillMount = function componentWillMount () {
+  this.focus = function focus () {}
+}
+
 const userEl = document.getElementById('user')
 
 const render = Component => {

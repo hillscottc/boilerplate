@@ -6,6 +6,8 @@ import ComicSearch from './containers/comic-search'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
+import 'react-bootstrap-multiselect/css/bootstrap-multiselect.css'
+import 'react-dates/lib/css/_datepicker.css'
 
 const App = ({user}) => (
   <Router>
