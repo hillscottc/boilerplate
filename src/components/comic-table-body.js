@@ -42,7 +42,7 @@ const ComicTableBody = ({ user, comics, openSubscribeModal, isSubscribedTitle })
           </td>
           <td style={{textAlign: 'center'}}>
             {item.rightsRestricted &&
-            <OverlayTrigger placement='right' overlay={tooltip({tipText: item.rightsRestricted })}>
+            <OverlayTrigger placement='right' overlay={tooltip({tipText: item.rightsRestricted})}>
               <img src={imgCheckRed} />
             </OverlayTrigger>
             }

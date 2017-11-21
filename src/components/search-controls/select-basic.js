@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap'
 
 class SearchControlSelectBasic extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       sortOrder: 'asc'

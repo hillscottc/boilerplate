@@ -4,7 +4,7 @@ import { FormGroup, ControlLabel, Button } from 'react-bootstrap'
 import Multiselect from 'react-bootstrap-multiselect'
 
 class SearchControlMulti extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       sortOrder: 'asc'
@@ -12,8 +12,8 @@ class SearchControlMulti extends Component {
   }
 
   sortOrderSet = () => {
-    const sortOrder = this.state.sortOrder;
-    this.props.sortClick(this.props.label, sortOrder);
+    const sortOrder = this.state.sortOrder
+    this.props.sortClick(this.props.label, sortOrder)
     let newOrder = ''
     if (sortOrder === '' || sortOrder === 'desc') {
       newOrder = 'asc'
@@ -24,7 +24,7 @@ class SearchControlMulti extends Component {
   }
 
   render () {
-    const {items, selectItem, label, style, enableFiltering, sortClick} = this.props;
+    const {items, selectItem, label, style, enableFiltering, sortClick} = this.props
     return (
       <FormGroup style={style}>
         { sortClick &&
@@ -53,7 +53,7 @@ SearchControlMulti.propTypes = {
   selectItem: PropTypes.func.isRequired,
   items: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired
   })).isRequired,
   label: PropTypes.string.isRequired,
   style: PropTypes.object,

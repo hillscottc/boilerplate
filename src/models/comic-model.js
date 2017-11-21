@@ -109,7 +109,6 @@ export class ComicModel {
 }
 
 export const searchComic = async (qs) => {
-
   const url = `${API_ROOT}/search-comic.asp?${qs}`
   console.log(`Fetching url: ${url}`)
 

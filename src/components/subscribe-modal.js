@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import { Modal, Button, Checkbox } from 'react-bootstrap'
 
 const modalStyle = { position: 'fixed', zIndex: 1040, top: 0, bottom: 0, left: 0, right: 0 }
@@ -60,7 +60,7 @@ SubscribeModal.propTypes = {
   subscriptions: PropTypes.arrayOf(PropTypes.shape({
     contactId: PropTypes.string.isRequired,
     titleId: PropTypes.string.isRequired,
-    subscriptionType: PropTypes.string.isRequired,
+    subscriptionType: PropTypes.string.isRequired
   })).isRequired
 }
 

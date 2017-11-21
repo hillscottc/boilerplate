@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 
 const BoolOptList = [
   {value: '--', label: '--'},
   {value: '1', label: 'Y'},
-  {value: '0', label: 'N'},
+  {value: '0', label: 'N'}
 ]
 
 class SearchControlBoolean extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-      sortOrder: "asc"
+      sortOrder: 'asc'
     }
   }
 
   sortOrderSet = () => {
-    const sortOrder = this.state.sortOrder;
+    const sortOrder = this.state.sortOrder
     this.props.sortClick(this.props.label, sortOrder)
-    let newOrder = '';
+    let newOrder = ''
     if (sortOrder === '' || sortOrder === 'desc') {
       newOrder = 'asc'
     } else {
@@ -29,7 +29,7 @@ class SearchControlBoolean extends Component {
   }
 
   render () {
-    const {select, selectVal, label, sortClick, style} = this.props;
+    const {select, selectVal, label, sortClick, style} = this.props
     return (
       <div>
         <FormGroup style={style}>

@@ -1,5 +1,5 @@
-import { API_ROOT } from '../utils';
-import axios from 'axios';
+import { API_ROOT } from '../utils'
+import axios from 'axios'
 import querystring from 'querystring'
 
 class SubscriptionModel {
@@ -7,51 +7,48 @@ class SubscriptionModel {
   titleId;
   subscriptionType;
 
-  constructor(
+  constructor (
     contactId,
     titleId,
     subscriptionType
   ) {
-    this.contactId = contactId;
-    this.titleId = titleId;
-    this.subscriptionType = subscriptionType;
+    this.contactId = contactId
+    this.titleId = titleId
+    this.subscriptionType = subscriptionType
   }
 
-  static fromJS(object) {
+  static fromJS (object) {
     return new SubscriptionModel(
-      object["ContactID"],
-      object["TitleID"],
-      object["SubscriptionType"]);
+      object['ContactID'],
+      object['TitleID'],
+      object['SubscriptionType'])
   }
 }
 
-
 export const getSubscriptions = async (contactId) => {
-  const qs = querystring.stringify({ContactID: contactId});
-  const url = `${API_ROOT}/subscriptions.asp?${qs}`;
-  const response = await axios.get(url);
-  return response.data.data.map(item => SubscriptionModel.fromJS(item));
-};
-
+  const qs = querystring.stringify({ContactID: contactId})
+  const url = `${API_ROOT}/subscriptions.asp?${qs}`
+  const response = await axios.get(url)
+  return response.data.data.map(item => SubscriptionModel.fromJS(item))
+}
 
 export const remSubscription = async (contactId, titleId, subscriptionType) => {
   const qs = querystring.stringify({
     titleId,
     contactId,
     subType: subscriptionType
-  });
-  const url = `${API_ROOT}/subscriptions-rem.asp?${qs}`;
-  const response = await axios.get(url);
-  return response.data;
-};
-
+  })
+  const url = `${API_ROOT}/subscriptions-rem.asp?${qs}`
+  const response = await axios.get(url)
+  return response.data
+}
 
 export const addSubscription = async (contactId, titleId, subscriptionType) => {
   const qs = querystring.stringify({
     titleId,
     contactId,
     subType: subscriptionType
-  });
-  const response = await axios.get(`${API_ROOT}/subscriptions-post.asp?${qs}`);
-  return response.data;
-};
+  })
+  const response = await axios.get(`${API_ROOT}/subscriptions-post.asp?${qs}`)
+  return response.data
+}

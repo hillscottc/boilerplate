@@ -3,18 +3,18 @@ import PropTypes from 'prop-types'
 import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 
 class SearchControlTextBox extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       sortOrder: 'asc'
-    };
+    }
   }
 
   sortOrderSet = () => {
     const sortOrder = this.state.sortOrder
     this.props.sortClick(this.props.label, sortOrder)
     let newOrder = ''
-    if (sortOrder === '' || sortOrder === 'desc' ) {
+    if (sortOrder === '' || sortOrder === 'desc') {
       newOrder = 'asc'
     } else {
       newOrder = 'desc'
@@ -33,7 +33,7 @@ class SearchControlTextBox extends Component {
             </Button>
           </ControlLabel>
         }
-        { ! sortClick &&
+        { !sortClick &&
           <ControlLabel>{label}</ControlLabel>
         }
         <FormControl type='text' value={txt} onChange={txtSet} />

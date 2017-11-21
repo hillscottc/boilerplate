@@ -26,7 +26,6 @@ const DmcpDetail = ({ user, item }) => {
   }
 
   const assetUrl = (pdlAssetId) => {
-
     // OVERRIDE - Use a prod link all the time here, making testing easier. By request from B.
     // const env = getEnviron(String(window.location.href));
     const env = 'Production'
@@ -40,7 +39,7 @@ const DmcpDetail = ({ user, item }) => {
     }
   }
 
-  if (user.customerType === 'Licensee' && item.rightsRestricted ) {
+  if (user.customerType === 'Licensee' && item.rightsRestricted) {
     return (
       <a href={assetUrl(item.pdlAssetId)} title={'Click to view this title in DMC-Publishing'}><img src={imgCheckRed} /></a>
     )

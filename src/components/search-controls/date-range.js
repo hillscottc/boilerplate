@@ -1,30 +1,30 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Button, FormGroup, ControlLabel } from 'react-bootstrap'
-import { DateRangePicker} from 'react-dates'
+import { DateRangePicker } from 'react-dates'
 
 class SearchControlDateRange extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       sortOrder: 'asc'
     }
   }
 
   sortOrderSet = () => {
-    const sortOrder = this.state.sortOrder;
-    this.props.sortClick(this.props.label, sortOrder);
-    let newOrder = '';
-    if (sortOrder === '' || sortOrder === 'desc' ) {
+    const sortOrder = this.state.sortOrder
+    this.props.sortClick(this.props.label, sortOrder)
+    let newOrder = ''
+    if (sortOrder === '' || sortOrder === 'desc') {
       newOrder = 'asc'
     } else {
       newOrder = 'desc'
     }
-    this.setState({ sortOrder: newOrder });
+    this.setState({ sortOrder: newOrder })
   }
 
   render () {
-    const {startDate, endDate, onDatesChange, focusedInput, onFocusChange, label, style, sortClick} = this.props;
+    const {startDate, endDate, onDatesChange, focusedInput, onFocusChange, label, style, sortClick} = this.props
     return (
       <FormGroup style={style}>
         { sortClick &&
@@ -33,10 +33,10 @@ class SearchControlDateRange extends Component {
           </Button>
         </ControlLabel>
         }
-        { ! sortClick &&
+        { !sortClick &&
         <ControlLabel>{label}</ControlLabel>
         }
-        <br/>
+        <br />
         <DateRangePicker
           startDate={startDate} // momentPropTypes.momentObj or null,
           endDate={endDate} // momentPropTypes.momentObj or null,
