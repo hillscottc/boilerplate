@@ -1,52 +1,48 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import momentPropTypes from 'react-moment-proptypes';
-import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import DmcpDetail from './title-details/dmcp';
-import * as imgFeed from '../images/feed.png';
-import * as imgFeedGrey from '../images/feed_grayscale.png';
-import * as imgCheckRed from '../images/check_red.gif';
-import * as imgCheckOrange from '../images/check_orange.gif';
-import * as imgCheckYes from '../images/img_check_yes.gif';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import DmcpDetail from './title-details/dmcp'
+import * as imgFeed from '../assets/feed.png'
+import * as imgFeedGrey from '../assets/feed_grayscale.png'
+import * as imgCheckRed from '../assets/check_red.gif'
+import * as imgCheckOrange from '../assets/check_orange.gif'
+import * as imgCheckYes from '../assets/img_check_yes.gif'
 
-
-const ComicTableBody = ({user, comics, openSubscribeModal, isSubscribedTitle }) => {
-
-  const tooltip = ({tipText}) => (
-    <Tooltip id="tooltip"><strong>{tipText}</strong></Tooltip>
-  );
+const ComicTableBody = ({ user, comics, openSubscribeModal, isSubscribedTitle }) => {
+  const tooltip = ({tipText}) => ( // eslint-disable-line react/prop-types
+    <Tooltip id='tooltip'><strong>{tipText}</strong></Tooltip>
+  )
 
   // This odd logic comes straight from searchResultsIssuesComics.asp
   const readLink = (titleId) => {
-    let page;
-    if (titleId >= 800000 ) {
-      page = "issueRead.asp";
+    let page
+    if (titleId >= 800000) {
+      page = 'issueRead.asp'
     } else if (titleId <= 100000) {
-      page = "MagazineRead.asp";
+      page = 'MagazineRead.asp'
     } else {
-      page = "titleRead.asp";
+      page = 'titleRead.asp'
     }
     return `/global_titles_library/comics_-_magazines/${page}?ID=${titleId}`
-  };
-
+  }
 
   return (
     <tbody>
       {comics.map((item) =>
         <tr key={item.titleId} >
-          <td style={{textAlign: "center"}}>
+          <td style={{textAlign: 'center'}}>
             <Button onClick={(e) => openSubscribeModal(item.titleId, e)}>
               <img src={isSubscribedTitle(item.titleId) ? imgFeed : imgFeedGrey} />
             </Button>
           </td>
-          <td style={{textAlign: "center"}}>
+          <td style={{textAlign: 'center'}}>
             {item.dpwOnly &&
             <img src={imgCheckOrange} />
             }
           </td>
-          <td style={{textAlign: "center"}}>
+          <td style={{textAlign: 'center'}}>
             {item.rightsRestricted &&
-            <OverlayTrigger placement="right" overlay={tooltip({tipText: item.rightsRestricted })}>
+            <OverlayTrigger placement='right' overlay={tooltip({tipText: item.rightsRestricted })}>
               <img src={imgCheckRed} />
             </OverlayTrigger>
             }
@@ -60,12 +56,12 @@ const ComicTableBody = ({user, comics, openSubscribeModal, isSubscribedTitle }) 
           <td>{item.format}</td>
           <td>{item.magazineName}</td>
           <td>{item.type}</td>
-          <td><a target="_blank" href={readLink(item.titleId)}>{item.title}</a></td>
+          <td><a target='_blank' href={readLink(item.titleId)}>{item.title}</a></td>
           <td>{item.dmcpFilename}</td>
           <td>{item.source}</td>
-          <td style={{textAlign: "center"}}>
+          <td style={{textAlign: 'center'}}>
             {/* DMC-P */}
-            <DmcpDetail {...{user, item}}/>
+            <DmcpDetail {...{user, item}} />
           </td>
           <td>
             {/* DCS */}
@@ -75,7 +71,7 @@ const ComicTableBody = ({user, comics, openSubscribeModal, isSubscribedTitle }) 
           </td>
           <td>
             {item.releaseDate.isValid() &&
-              <span>{item.releaseDate.format("MM/DD/YYYY")}</span>
+              <span>{item.releaseDate.format('MM/DD/YYYY')}</span>
             }
           </td>
         </tr>
@@ -83,8 +79,7 @@ const ComicTableBody = ({user, comics, openSubscribeModal, isSubscribedTitle }) 
 
     </tbody>
   )
-};
-
+}
 
 ComicTableBody.propTypes = {
   comics: PropTypes.arrayOf(PropTypes.shape({
@@ -111,12 +106,11 @@ ComicTableBody.propTypes = {
     dcs: PropTypes.bool,
     // releaseDate: momentPropTypes.momentObj, //cuzz fails when null :(
     releaseDate: PropTypes.object,
-    pdlAssetId: PropTypes.string,
+    pdlAssetId: PropTypes.string
   })).isRequired,
   openSubscribeModal: PropTypes.func.isRequired,
   isSubscribedTitle: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
-};
+  user: PropTypes.object.isRequired
+}
 
-
-export default ComicTableBody;
+export default ComicTableBody

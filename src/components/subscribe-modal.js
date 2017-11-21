@@ -2,30 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Button, Checkbox } from 'react-bootstrap'
 
-
-const modalStyle = {
-  position: 'fixed',
-  zIndex: 1040,
-  top: 0, bottom: 0, left: 0, right: 0
-};
+const modalStyle = { position: 'fixed', zIndex: 1040, top: 0, bottom: 0, left: 0, right: 0 }
 
 const backdropStyle = {
   ...modalStyle,
   zIndex: 'auto',
   backgroundColor: '#000',
   opacity: 0.5
-};
-
+}
 
 const SubscribeModal = ({ closeSubscribeModal, showSubscribeModal, modalTitleId,
-    clickSubscribe, subscriptions }) => {
-
+  clickSubscribe, subscriptions }) => {
   // Is user subscribed to this titleId and type?
   const isSubscribed = (subsType) => {
-    const matched = subscriptions.filter(x => x.titleId === modalTitleId && x.subscriptionType === subsType);
-    return matched.length > 0;
-  };
-
+    const matched = subscriptions.filter(x => x.titleId === modalTitleId && x.subscriptionType === subsType)
+    return matched.length > 0
+  }
 
   return (
     <Modal
@@ -58,8 +50,7 @@ const SubscribeModal = ({ closeSubscribeModal, showSubscribeModal, modalTitleId,
       </Modal.Footer>
     </Modal>
   )
-};
-
+}
 
 SubscribeModal.propTypes = {
   closeSubscribeModal: PropTypes.func.isRequired,
@@ -70,8 +61,7 @@ SubscribeModal.propTypes = {
     contactId: PropTypes.string.isRequired,
     titleId: PropTypes.string.isRequired,
     subscriptionType: PropTypes.string.isRequired,
-  })).isRequired,
-};
+  })).isRequired
+}
 
-
-export default SubscribeModal;
+export default SubscribeModal
