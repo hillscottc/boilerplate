@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { renderRoutes } from 'react-router-config'
+// import { renderRoutes } from 'react-router-config'
 import { NavLink as Link } from 'react-router-dom'
 import './MainView.css'
 
@@ -11,7 +11,7 @@ const MainView = ({ route }) => (
       <Link to='/async' className='btn' activeClassName='active'>To Async</Link>
     </div>
     <div className='view'>
-      {renderRoutes(route.childRoutes)}
+      {/* {renderRoutes(route.childRoutes)} */}
     </div>
   </div>
 )

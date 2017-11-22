@@ -578,7 +578,7 @@ class ComicSearch extends Component {
                     />
                   </th>
                   <th>
-                     {/* <SearchControlDateRange onDatesChange={onDatesChange} onFocusChange={onFocusChange} focusedInput={focusedInput} startDate={shelfStartDate} endDate={shelfEndDate} label={Labels.onShelf} style={{width: '400px'}} sortClick={sortClick}/> */}
+                      {/* <SearchControlDateRange onDatesChange={onDatesChange} onFocusChange={onFocusChange} focusedInput={focusedInput} startDate={shelfStartDate} endDate={shelfEndDate} label={Labels.onShelf} style={{width: '400px'}} sortClick={sortClick}/> */}
                   </th>
                 </tr>
               </thead>
