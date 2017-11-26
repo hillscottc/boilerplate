@@ -11,7 +11,7 @@ const webpack = require('webpack');
 const config = require('../config');
 const webpackConfig = require('./webpack.prod.conf');
 
-const animation = chalkAnimation.rainbow('building for production...');
+const animation = chalkAnimation.neon('building for production...');
 animation.start();
 
 const assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory);
@@ -34,7 +34,6 @@ webpack(webpackConfig, function (err, stats) {
 
     console.log(chalk.cyan('  Build complete.\n'))
     console.log(chalk.yellow(
-        '  Tip: built files are meant to be served over an HTTP server.\n' +
-        '  Opening index.html over file:// won\'t work.\n'
+        '  Tip: Meant to be served over an HTTP server. Opening index.html over file:// won\'t work.\n'
     ));
 });
