@@ -11,7 +11,7 @@ import * as imgCheckYes from '../assets/img_check_yes.gif'
 const BookTableBody = ({ user, books, openSubscribeModal, isSubscribed }) => {
   const tooltip = ({ tipText }) => ( // eslint-disable-line react/prop-types
     <Tooltip id='tooltip'><strong>{ tipText }</strong></Tooltip>
-  );
+  )
 
   return (
     <tbody>
@@ -29,7 +29,7 @@ const BookTableBody = ({ user, books, openSubscribeModal, isSubscribed }) => {
           </td>
           <td style={{textAlign: 'center'}}>
             {item.rightsRestricted &&
-              <OverlayTrigger placement='right' overlay={tooltip({tipText: item.rightsRestricted })}>
+              <OverlayTrigger placement='right' overlay={tooltip({ tipText: item.rightsRestricted })}>
                 <img src={imgCheckRed} />
               </OverlayTrigger>
             }

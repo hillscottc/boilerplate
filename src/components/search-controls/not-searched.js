@@ -3,15 +3,15 @@ import PropTypes from 'prop-types'
 import { Button, FormGroup, ControlLabel } from 'react-bootstrap'
 
 class NotSearched extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       sortOrder: 'asc'
-    };
+    }
   }
 
   sortOrderSet = () => {
-    const sortOrder = this.state.sortOrder;
+    const sortOrder = this.state.sortOrder
     this.props.sortClick(this.props.label, sortOrder)
     let newOrder = ''
     if (sortOrder === '' || sortOrder === 'desc') {
