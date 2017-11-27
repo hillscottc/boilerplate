@@ -470,7 +470,7 @@ class BookSearch extends Component {
                     <SearchControlBoolean
                       select={selectSubscribed}
                       selectVal={optSubsSelected}
-                      label={'Subscribe'}
+                      label={Labels.subscribe}
                       style={{width: '65px'}}
                     />
                   </th>
@@ -478,7 +478,7 @@ class BookSearch extends Component {
                     <SearchControlBoolean
                       select={selectDpw}
                       selectVal={optDpwSelected}
-                      label={'DPW Only'}
+                      label={Labels.dpwOnly}
                       style={{width: '75px'}}
                       sortClick={sortClick}
                     />
@@ -487,7 +487,7 @@ class BookSearch extends Component {
                     <SearchControlBoolean
                       select={selectRR}
                       selectVal={optRRSelected}
-                      label={'R.R.'}
+                      label={Labels.rr}
                       style={{width: '60px'}}
                       sortClick={sortClick}
                     />
@@ -618,7 +618,7 @@ class BookSearch extends Component {
                     <SearchControlTextBox
                       txtSet={dmcpFilenameSet}
                       txt={dmcpName}
-                      label={'DMC-P Filename'}
+                      label={Labels.dmcpFilename}
                       style={{width: '98px'}}
                       sortClick={sortClick}
                     />
@@ -627,7 +627,7 @@ class BookSearch extends Component {
                     <SearchControlMulti
                       selectItem={sourceChoose}
                       items={sources}
-                      label={'Source'}
+                      label={Labels.source}
                       style={{width: '125px'}}
                       sortClick={sortClick}
                     />
@@ -636,7 +636,7 @@ class BookSearch extends Component {
                     <SearchControlBoolean
                       select={dmcpSet}
                       selectVal={dmcp}
-                      label={'DMC-P'}
+                      label={Labels.dmcp}
                       style={{width: '60px'}}
                       sortClick={sortClick}
                     />
@@ -653,7 +653,7 @@ class BookSearch extends Component {
                     <SearchControlBoolean
                       select={dcsSet}
                       selectVal={dcs}
-                      label={'DCS'}
+                      label={Labels.dcs}
                       style={{width: '60px'}}
                       sortClick={sortClick}
                     />

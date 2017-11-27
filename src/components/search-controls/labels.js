@@ -22,7 +22,7 @@ export const Labels = {
   rr: 'R.R.',
   series: 'Series',
   seriesCode: 'Series Code',
-  source: 'Source',
+  source: 'Origin',
   subscribe: 'Subscribe',
   title: 'Title',
   titleCode: 'Title Code'
