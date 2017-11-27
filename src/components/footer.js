@@ -5,7 +5,7 @@ const itemStyle = {display: 'inline'}
 const Footer = () => (
   <div>
     <hr style={{borderTop: '1px solid #8c8b8b'}} />
-    <ul style={{ display: 'inline', marginTop: '15px'}}>
+    <ul style={{display: 'inline', marginTop: '15px'}}>
       <li style={itemStyle}>
         <a href={'/contact.asp'}>Contact Us</a>
         &nbsp; | &nbsp;

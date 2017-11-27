@@ -7,7 +7,7 @@ export default class UserModel {
   region;
   dpwUser;
 
-  constructor(contactId, login, customerType = 'Internal', roles = [], region = '', dpwUser = true) {
+  constructor (contactId, login, customerType = 'Internal', roles = [], region = '', dpwUser = true) {
     this.contactId = contactId
     this.login = login
     this.customerType = customerType
@@ -21,17 +21,16 @@ export default class UserModel {
       }
     }
 
-    if (! CustomerTypes.includes(customerType)) {
+    if (!CustomerTypes.includes(customerType)) {
       throw new Error('Invalid customerType: ' + customerType)
     }
 
-    if (! Regions.includes(region)) {
+    if (!Regions.includes(region)) {
       throw new Error('Invalid region: ' + region)
     }
-
   }
 
-  static fromJS(object) {
+  static fromJS (object) {
     return new UserModel(
       object['contactId'],
       object['login'],
@@ -42,10 +41,9 @@ export default class UserModel {
     )
   }
 
-  hasRole(role) {
+  hasRole (role) {
     return this.roles.includes(role)
-  };
-
+  }
 }
 
 const CustomerTypes = ['Licensee', 'Internal']
