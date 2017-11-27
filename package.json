@@ -14,7 +14,8 @@
     "dev": "node build/dev-server",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.jsx src test",
-    "test": "jest"
+    "test": "jest test/unit",
+    "test:api": "jest test/api"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
