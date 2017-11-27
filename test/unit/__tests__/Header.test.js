@@ -7,7 +7,7 @@ import * as dpwLogo from 'src/assets/dpw_logo_header.gif'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('<Header />', () => {
-  it('should containd the logo', () => {
+  it('should contain the logo', () => {
     const wrapper = shallow(<Header />)
     expect(wrapper.containsMatchingElement(
       <a href={'/index.asp'}><img src={dpwLogo} /></a>

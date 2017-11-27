@@ -1,8 +1,7 @@
-# boilerplate
+# DPW Global Titles Extended Search
 
+Webpack boilerplate: 
 https://github.com/SidKwok/react-webpack-boilerplate
-
-> A React project
 
 ## Usage
 
