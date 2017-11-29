@@ -15,7 +15,9 @@
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.jsx src test",
     "test": "jest test/unit",
-    "test:api": "jest test/api"
+    "test:api": "jest test/api",
+    "clean": "rm -r $DPW_ROOT/testdir/*",
+    "deploy:local": "cp -R dist/* $DPW_ROOT/testdir/"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",

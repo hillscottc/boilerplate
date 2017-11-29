@@ -7,8 +7,9 @@ module.exports = {
         assetsRoot: path.resolve(__dirname, '../dist'),
         assetsSubDirectory: 'static',
 
+        // The dir on Prod where it will be deployed.
         // assetsPublicPath: '/',
-        assetsPublicPath: '/dist/',
+        assetsPublicPath: '/testdir/',
 
 
         // disable by default for clients should not
